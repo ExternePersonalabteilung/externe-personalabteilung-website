@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>360 Grad Jobcoaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* =====================================================================
+     360 GRAD JOBCOACHING — animierte, responsive Infografik
+     • Farben über CSS-Variablen (im Tweaks-Panel live anpassbar)
+     • Texte werden in diagram.js erzeugt ("programmiert")
+     • BILD-PLATZHALTER: suche nach  BILD-PLATZHALTER  und ersetze background-image
+     • Die Pfeile kreisen von selbst (CSS-Animation)
+     ===================================================================== */
+  :root{
+    --c-page:    #ffffff;
+    --c-stage:   #fffaf2;   /* zarter Cremeton hinter der Grafik */
+    --c-panel-a: #fbf1de;   /* Panel-Verlauf hell                */
+    --c-panel-b: #f4e6cb;   /* Panel-Verlauf dunkler             */
+    --c-border:  #ddbf90;   /* warme Rahmenlinie                 */
+    --c-title:   #4a3320;   /* dunkles Kaffeebraun (Überschr.)   */
+    --c-text:    #6e5740;   /* Fließtext / Labels                */
+    --c-accent:  #a76a34;   /* Karamell-Braun (Icons, 360°)      */
+    --c-accent2: #c89154;   /* helleres Braun                    */
+    --c-chip:    #fff7ea;   /* Icon-Chip-Hintergrund             */
+    --c-arrow1:  #8a5526;
+    --c-arrow2:  #b9844a;
+
+    --spin: 30s;            /* Umlaufdauer der Pfeile             */
+    --maxw: 1080px;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{
+    font-family:"Manrope",system-ui,sans-serif;
+    color:var(--c-text);
+    background:var(--c-page);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:clamp(28px,5vw,64px) clamp(18px,4vw,48px);
+  }
+
+  /* ---------- Kopf: Überschriften ---------- */
+  .head{ text-align:center; margin:0 auto clamp(26px,4vw,46px); max-width:46rem; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.6em;
+    font-size:clamp(11px,1.1vw,13px); font-weight:700;
+    letter-spacing:.2em; text-transform:uppercase; color:var(--c-accent);
+    margin:0 0 clamp(12px,1.6vw,18px);
+  }
+  .eyebrow::before,.eyebrow::after{ content:""; width:26px; height:2px; border-radius:2px; background:var(--c-accent2); }
+  h1{
+    font-family:"Lora",Georgia,serif; font-weight:700;
+    font-size:clamp(30px,5vw,54px); line-height:1.05; letter-spacing:-0.01em;
+    color:var(--c-title); margin:0 0 clamp(12px,1.8vw,20px); text-wrap:balance;
+  }
+  h1 .deg{ color:var(--c-accent); }
+  .sub{
+    font-size:clamp(15px,1.55vw,19px); color:var(--c-text);
+    margin:0; text-wrap:pretty;
+  }
+  .sub b{ color:var(--c-title); font-weight:700; }
+
+  /* ---------- Bühne + Diagramm ---------- */
+  .stage{
+    position:relative;
+    background:
+      radial-gradient(120% 120% at 50% 30%, var(--c-stage) 0%, transparent 70%);
+    border-radius:28px;
+    padding:clamp(10px,2vw,26px);
+  }
+
+  .diagram{
+    display:grid;
+    grid-template-columns: minmax(0,1fr) clamp(280px,32vw,360px) minmax(0,1fr);
+    grid-template-areas:
+      "top    top    top"
+      "left   center right"
+      "bottom bottom bottom";
+    gap:clamp(12px,1.8vw,22px);
+    align-items:stretch;
+  }
+
+  .panel{
+    background:linear-gradient(180deg,var(--c-panel-a),var(--c-panel-b));
+    border:1.5px solid var(--c-border);
+    border-radius:20px;
+    padding:clamp(12px,1.5vw,18px) clamp(14px,1.7vw,20px);
+    box-shadow:0 10px 24px -16px rgba(74,51,32,.55);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .panel:hover{ transform:translateY(-3px); box-shadow:0 16px 30px -18px rgba(74,51,32,.6); }
+  .panel--top{ grid-area:top; }
+  .panel--left{ grid-area:left; }
+  .panel--right{ grid-area:right; }
+  .panel--bottom{ grid-area:bottom; }
+  .panel--center{ grid-area:center; background:none; border:none; box-shadow:none; padding:0; }
+  .panel--center:hover{ transform:none; }
+
+  .panel__head{ display:flex; align-items:center; gap:11px; margin:0 0 clamp(10px,1.3vw,14px); }
+  .panel__title{
+    font-family:"Lora",Georgia,serif; font-weight:600;
+    font-size:clamp(15px,1.55vw,20px); color:var(--c-title); margin:0; line-height:1.15;
+  }
+
+  .panel__items{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:clamp(8px,1vw,12px) clamp(12px,1.6vw,20px); }
+  .item{ display:flex; align-items:center; gap:9px; min-width:0; }
+  .item span{ font-size:clamp(12.5px,1.15vw,15px); font-weight:500; color:var(--c-text); }
+
+  /* Seiten-Panels: Liste vertikal; breite Panels (oben/unten): horizontal umbrechend */
+  .panel--left .panel__items,
+  .panel--right .panel__items{ flex-direction:column; gap:clamp(9px,1.1vw,13px); }
+  .panel--top .panel__items,
+  .panel--bottom .panel__items{ justify-content:center; }
+
+  /* Icon-Chips */
+  .ico{
+    flex:none; display:grid; place-items:center;
+    width:30px; height:30px; border-radius:50%;
+    background:var(--c-chip); border:1.4px solid var(--c-border);
+    color:var(--c-accent);
+  }
+  .ico svg{ width:60%; height:60%; }
+  .ico--head{ width:40px; height:40px; border-width:1.6px; }
+
+  /* ---------- Zentrum: Portrait + kreisende Pfeile ---------- */
+  .center{
+    position:relative;
+    display:grid; place-items:center;
+    min-height:clamp(280px,34vw,400px);
+  }
+  .center__inner{
+    position:relative;
+    width:clamp(230px,26vw,320px);
+    aspect-ratio:1/1;
+    display:grid; place-items:center;
+  }
+
+  /* zentrales BILD-PLATZHALTER (Portrait der jobsuchenden Person) */
+  .portrait{
+    position:relative; z-index:2;
+    width:64%; aspect-ratio:1/1; border-radius:50%;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 38%, #fbf2e2 0%, #ecd7b6 70%, #e4c89f 100%);
+    box-shadow:0 20px 40px -20px rgba(74,51,32,.55), inset 0 0 0 6px #fff;
+    outline:2px solid var(--c-border); outline-offset:6px;
+    display:grid; place-items:center; text-align:center;
+  }
+  .portrait__hint{
+    color:var(--c-accent); font-weight:600; font-size:clamp(11px,1.3vw,13px);
+    display:flex; flex-direction:column; align-items:center; gap:7px; padding:10px;
+  }
+  .portrait__hint svg{ width:clamp(26px,3.4vw,34px); height:auto; opacity:.7; }
+
+  /* dezenter gestrichelter Innenring */
+  .center__inner::before{
+    content:""; position:absolute; inset:6%; border-radius:50%;
+    border:1.5px dashed color-mix(in srgb,var(--c-accent) 45%, transparent);
+    z-index:1;
+  }
+
+  /* kreisende Pfeile */
+  .arrows{
+    position:absolute; inset:-14%;
+    z-index:0;
+    animation:spin var(--spin) linear infinite;
+    transform-origin:50% 50%;
+    pointer-events:none;
+  }
+  .arrows svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .arrows .arc{ fill:none; stroke:url(#arrowGrad); stroke-width:4; stroke-linecap:round; }
+  .arrows text{ font-family:"Manrope",sans-serif; font-weight:700; font-size:6.6px; letter-spacing:.25px; fill:var(--c-title); }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  /* 360°-Badge */
+  .badge{
+    position:absolute; left:50%; bottom:9%; transform:translateX(-50%);
+    z-index:3;
+    background:linear-gradient(180deg,#fff8ee,#f4e6cb);
+    border:1.6px solid var(--c-border);
+    border-radius:100px; padding:7px 16px;
+    display:flex; align-items:baseline; gap:7px;
+    box-shadow:0 8px 18px -10px rgba(74,51,32,.5);
+    white-space:nowrap;
+  }
+  .badge .deg{ font-family:"Lora",serif; font-weight:700; font-size:clamp(16px,1.9vw,22px); color:var(--c-accent); }
+  .badge .lbl{ font-size:clamp(11px,1.2vw,13px); font-weight:600; letter-spacing:.04em; color:var(--c-title); text-transform:uppercase; }
+
+  /* ---------- Responsiv: gestapelt ---------- */
+  @media (max-width:840px){
+    .diagram{
+      grid-template-columns:1fr;
+      grid-template-areas:"center" "top" "left" "right" "bottom";
+      gap:clamp(14px,4vw,20px);
+    }
+    .center{ min-height:auto; padding:8px 0 26px; }
+    .center__inner{ width:clamp(220px,62vw,300px); }
+    .panel--left .panel__items,
+    .panel--right .panel__items{ flex-direction:row; }
+    .panel__items{ justify-content:flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .arrows{ animation:none; }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap" data-screen-label="360 Grad Jobcoaching">
+
+    <header class="head">
+      <p class="eyebrow" id="tw-eyebrow">Externe Personalabteilung</p>
+      <h1 id="tw-h1">360 <span class="deg">Grad</span> Job- &amp; Bewerbungscoaching</h1>
+      <p class="sub" id="tw-sub">
+        <b>Modernste, wissenschaftlich fundierte Methoden</b> treffen auf ein Team aus
+        <b>erfahrenen, einfühlsamen und nachweislich erfolgreichen</b> Coaches — für Ihren
+        sicheren, selbstbewussten und nachhaltigen Weg in den Traumjob.
+      </p>
+    </header>
+
+    <section class="stage">
+      <div class="diagram">
+        <!-- Panels werden von diagram.js mit Inhalt gefüllt -->
+        <div class="panel panel--top"></div>
+        <div class="panel panel--left"></div>
+
+        <div class="panel panel--center">
+          <div class="center">
+            <div class="center__inner">
+
+              <!-- kreisende Pfeile -->
+              <div class="arrows" aria-hidden="true">
+                <svg viewBox="0 0 200 200">
+                  <defs>
+                    <linearGradient id="arrowGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="var(--c-arrow2)"></stop>
+                      <stop offset="1" stop-color="var(--c-arrow1)"></stop>
+                    </linearGradient>
+                    <marker id="aHead" viewBox="0 0 10 10" refX="3" refY="5"
+                            markerWidth="3.2" markerHeight="3.2" orient="auto" markerUnits="strokeWidth">
+                      <path d="M0 0 L10 5 L0 10 L2.8 5 Z" fill="var(--c-arrow1)"></path>
+                    </marker>
+                  </defs>
+                  <!-- 4 beschriftete Textpfade (Führungslinien) -->
+                  <path id="tp-top"    fill="none" d="M42.15 31.06 A90 90 0 0 1 157.85 31.06"></path>
+                  <path id="tp-right"  fill="none" d="M168.94 42.15 A90 90 0 0 1 168.94 157.85"></path>
+                  <path id="tp-bottom" fill="none" d="M157.85 168.94 A90 90 0 0 1 42.15 168.94"></path>
+                  <path id="tp-left"   fill="none" d="M31.06 157.85 A90 90 0 0 1 31.06 42.15"></path>
+
+                  <!-- 4 drehende Viertel-Pfeile -->
+                  <path class="arc" marker-end="url(#aHead)" d="M51.14 41.78 A76 76 0 0 1 148.86 41.78"></path>
+                  <path class="arc" marker-end="url(#aHead)" d="M158.2 51.14 A76 76 0 0 1 158.2 148.86"></path>
+                  <path class="arc" marker-end="url(#aHead)" d="M148.86 158.2 A76 76 0 0 1 51.14 158.2"></path>
+                  <path class="arc" marker-end="url(#aHead)" d="M41.8 148.86 A76 76 0 0 1 41.8 51.14"></path>
+
+                  <!-- Beschriftungen -->
+                  <text><textPath href="#tp-top"    startOffset="50%" text-anchor="middle">Biografische Einflüsse</textPath></text>
+                  <text><textPath href="#tp-right"  startOffset="50%" text-anchor="middle">Äußere Einflüsse</textPath></text>
+                  <text><textPath href="#tp-bottom" startOffset="50%" text-anchor="middle">Bewerbungsbezogene Einflüsse</textPath></text>
+                  <text><textPath href="#tp-left"   startOffset="50%" text-anchor="middle">Innere Einflüsse</textPath></text>
+                </svg>
+              </div>
+
+              <!-- BILD-PLATZHALTER: Portrait der jobsuchenden Person -->
+              <div class="portrait" id="portrait">
+                <div class="portrait__hint">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="3.2"/><path d="M5.5 19.5a6.5 6.5 0 0 1 13 0"/><rect x="2.5" y="2.5" width="19" height="19" rx="5"/></svg>
+                  Ihr Bild hier
+                </div>
+              </div>
+
+              <!-- 360° Coaching Badge -->
+              <div class="badge" id="tw-badge">
+                <span class="deg">360°</span><span class="lbl" id="tw-badge-lbl">Coaching</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel--right"></div>
+        <div class="panel panel--bottom"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+// diagram.js — 360° Jobcoaching Infografik
+// Texte & Struktur sind hier "programmiert": Panels werden aus Daten erzeugt.
+// Icons sind schlanke Linien-Symbole (kein externes Bild nötig).
+// Das zentrale Portrait ist ein BILD-PLATZHALTER (im HTML markiert).
+
+(function () {
+  // ---------- Icon-Bibliothek (24x24, stroke) ----------
+  const ICONS = {
+    // Panel-Köpfe
+    user:      '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.3 18.2a6 6 0 0 1 11.4 0"/>',
+    soul:      '<path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.4-7 10-7 10z"/>',
+    globe:     '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+    clipboard: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3.5h6V7H9z"/><path d="M8.5 12h7M8.5 15.5h7"/>',
+    // Biografische
+    grad:      '<path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10.2V14c0 1 2.3 2 5 2s5-1 5-2v-3.8"/><path d="M21 8v4"/>',
+    music:     '<circle cx="7" cy="17" r="2.3"/><circle cx="17" cy="15" r="2.3"/><path d="M9.3 17V6.5l10-2V15"/>',
+    bulb:      '<path d="M9.5 18h5M10.5 21h3"/><path d="M12 3a6 6 0 0 0-3.8 10.6c.7.6 1 1.2 1.1 2.4h5.4c.1-1.2.4-1.8 1.1-2.4A6 6 0 0 0 12 3z"/>',
+    briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5.5A2 2 0 0 1 10 3.5h4a2 2 0 0 1 2 2V7"/><path d="M3 12.5h18"/>',
+    building:  '<rect x="5.5" y="3" width="13" height="18" rx="1.4"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>',
+    // Innere
+    body:      '<circle cx="12" cy="5.2" r="2.4"/><path d="M12 8v8M7.5 11h9M9 21l3-5 3 5"/>',
+    spirit:    '<circle cx="12" cy="12" r="3"/><path d="M12 3v2.6M12 18.4V21M4.2 7.3l1.9 1.1M17.9 15.6l1.9 1.1M19.8 7.3l-1.9 1.1M6.1 15.6l-1.9 1.1"/>',
+    target:    '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1.1"/>',
+    shield:    '<path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/>',
+    pulse:     '<path d="M3 12h3.5l2-5 3.2 10 2.2-5H21"/>',
+    quote:     '<path d="M4 5h16v10H8.5L4 19V5z"/><path d="M8 9.5h8M8 12.5h5"/>',
+    // Äußere
+    leaf:      '<path d="M5 19c0-8 6-13 14-13 0 8-5 14-13 14-1 0-1-.6-1-1z"/><path d="M5.5 18.5c2.8-3 5.8-5 9-6.2"/>',
+    family:    '<circle cx="9" cy="8" r="3"/><path d="M3.2 20c0-3.2 2.8-5.2 5.8-5.2S14.8 16.8 14.8 20"/><circle cx="17.3" cy="9" r="2.2"/><path d="M16.2 14.9c2.8 0 4.6 1.9 4.6 5.1"/>',
+    market:    '<path d="M3 17l5-5 4 4 8.5-8.5"/><path d="M16 4h4.5v4.5"/>',
+    euro:      '<path d="M16.5 6.2a6 6 0 1 0 0 11.6"/><path d="M4.5 10h8.5M4.5 14h7.5"/>',
+    network:   '<circle cx="6" cy="6.5" r="2.1"/><circle cx="18" cy="6.5" r="2.1"/><circle cx="12" cy="18" r="2.1"/><path d="M7.6 7.9 10.6 16M16.4 7.9 13.4 16M8 6.5h8"/>',
+    pin:       '<path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+    // Bewerbungsbezogene
+    file:      '<path d="M6.5 3h7l4.5 4.5V21h-11.5z"/><path d="M13.5 3v4.5H18"/><path d="M9 13h6M9 16.5h6"/>',
+    badge:     '<rect x="4" y="4.5" width="16" height="15" rx="2"/><circle cx="12" cy="10" r="2.4"/><path d="M8 16c0-2 2-3 4-3s4 1 4 3"/>',
+    mail:      '<rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 5.5L20.5 7"/>',
+    search:    '<circle cx="11" cy="11" r="6"/><path d="M19.5 19.5 15.5 15.5"/>',
+    award:     '<circle cx="12" cy="9" r="5"/><path d="M9 13.2 7.8 21l4.2-2.2L16.2 21 15 13.2"/>',
+    monitor:   '<rect x="3" y="4.5" width="18" height="11.5" rx="2"/><path d="M8.5 20h7M12 16v4"/><circle cx="12" cy="9.5" r="1.9"/>',
+    interview: '<path d="M4 5.5h16v10H9l-5 4V5.5z"/><path d="M8 9.2h8M8 12.2h5"/>',
+    coins:     '<circle cx="9" cy="9.5" r="5"/><path d="M15 6a5 5 0 0 1 0 9.5"/><path d="M7.2 9.5h3"/>'
+  };
+
+  function ico(name, cls) {
+    return '<span class="ico ' + (cls || '') + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[name] || '') + '</svg></span>';
+  }
+
+  // ---------- Daten (Texte) ----------
+  const PANELS = {
+    top: {
+      title: 'Biografische Einflüsse', head: 'user',
+      items: [
+        ['grad', 'Ausbildung / Studium'], ['music', 'Hobbys'], ['bulb', 'Erfahrung'],
+        ['briefcase', 'Berufserfahrung'], ['building', 'Branche']
+      ]
+    },
+    left: {
+      title: 'Innere Einflüsse', head: 'soul',
+      items: [
+        ['body', 'Körper'], ['soul', 'Seele'], ['spirit', 'Geist'], ['target', 'Motivation'],
+        ['shield', 'Selbstbewusstsein'], ['pulse', 'Gesundheit'], ['quote', 'Glaubenssätze']
+      ]
+    },
+    right: {
+      title: 'Äußere Einflüsse', head: 'globe',
+      items: [
+        ['leaf', 'Umwelt'], ['family', 'Familie'], ['market', 'Arbeitsmarkt'],
+        ['euro', 'Finanzen'], ['network', 'Netzwerk'], ['pin', 'Region']
+      ]
+    },
+    bottom: {
+      title: 'Bewerbungsbezogene Einflüsse', head: 'clipboard',
+      items: [
+        ['file', 'Lebenslauf'], ['badge', 'Jobtitel'], ['mail', 'Anschreiben'], ['search', 'Keywords'],
+        ['award', 'Zeugnisse'], ['monitor', 'Online-Profil'], ['interview', 'Vorstellungsgespräch'],
+        ['coins', 'Gehaltsverhandlung']
+      ]
+    }
+  };
+
+  function renderPanel(key) {
+    const p = PANELS[key];
+    const items = p.items.map(function (it) {
+      return '<li class="item">' + ico(it[0]) + '<span>' + it[1] + '</span></li>';
+    }).join('');
+    return '<div class="panel__head">' + ico(p.head, 'ico--head') +
+      '<h3 class="panel__title">' + p.title + '</h3></div>' +
+      '<ul class="panel__items">' + items + '</ul>';
+  }
+
+  function render() {
+    Object.keys(PANELS).forEach(function (key) {
+      const el = document.querySelector('.panel--' + key);
+      if (el) el.innerHTML = renderPanel(key);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', render, { once: true });
+  } else {
+    render();
+  }
+})();
+
+  </script>
+</body>
+</html>

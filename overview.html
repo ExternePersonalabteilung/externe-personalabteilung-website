@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website-Übersicht · Externe Personalabteilung</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+body{background:var(--cream-light)}
+.ov-wrap{max-width:1280px;margin:0 auto;padding:3rem 2rem}
+.ov-head{margin-bottom:2.5rem}
+.ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.ov-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-decoration:none;color:inherit;transition:all .25s;display:flex;flex-direction:column;gap:0.5rem;min-height:180px}
+.ov-card:hover{border-color:var(--brown);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.ov-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--brown);line-height:1}
+.ov-title{font-weight:700;color:var(--brown-dark);font-size:1.1rem}
+.ov-desc{color:var(--text-muted);font-size:0.88rem;line-height:1.55;flex:1}
+.ov-path{font-family:'SF Mono',Menlo,monospace;font-size:0.75rem;color:var(--brown-mid);background:var(--cream);padding:0.3rem 0.6rem;border-radius:6px;align-self:flex-start}
+</style>
+</head>
+<body>
+<div class="ov-wrap">
+  <div class="ov-head">
+    <div style="font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown-mid);font-weight:600;margin-bottom:0.75rem">Website Übersicht · externe-personalabteilung.de</div>
+    <h1 style="font-size:2.8rem;margin-bottom:0.75rem">Alle Seiten auf einen Blick.</h1>
+    <p style="color:var(--text-muted);font-size:1.05rem;max-width:720px;line-height:1.7">Komplette Website für Anita Bösche — Externe Personalabteilung. Klicken Sie eine Karte an, um die jeweilige Seite zu öffnen. Alle Seiten sind mobil-optimiert, DSGVO-konform und SEO-strukturiert.</p>
+  </div>
+
+  <div class="ov-grid">
+    <a href="index.html" class="ov-card"><div class="ov-num">01</div><div class="ov-title">Startseite</div><div class="ov-desc">Hero, Angebot, Quiz, Testimonials, FAQ — das Herzstück.</div><div class="ov-path">/index.html</div></a>
+    <a href="jobcoaching.html" class="ov-card"><div class="ov-num">02</div><div class="ov-title">Jobcoaching</div><div class="ov-desc">10 Module, Ablauf, AVGS-Hinweis. Für Jobsuchende.</div><div class="ov-path">/jobcoaching.html</div></a>
+    <a href="recruiting.html" class="ov-card"><div class="ov-num">03</div><div class="ov-title">Recruiting</div><div class="ov-desc">Für Unternehmen — Active Sourcing, Pricing-Karten.</div><div class="ov-path">/recruiting.html</div></a>
+    <a href="jobvermittlung.html" class="ov-card"><div class="ov-num">04</div><div class="ov-title">Jobvermittlung</div><div class="ov-desc">AVGS-Förderung, 4-Schritte-Ablauf.</div><div class="ov-path">/jobvermittlung.html</div></a>
+    <a href="ueber-mich.html" class="ov-card"><div class="ov-num">05</div><div class="ov-title">Über mich</div><div class="ov-desc">Anita's Story, Qualifikationen, Werte.</div><div class="ov-path">/ueber-mich.html</div></a>
+    <a href="job.html" class="ov-card"><div class="ov-num">06</div><div class="ov-title">Karriere</div><div class="ov-desc">Freelancer-Kooperation & Partner-Netzwerk.</div><div class="ov-path">/job.html</div></a>
+    <a href="kontakt.html" class="ov-card"><div class="ov-num">07</div><div class="ov-title">Kontakt</div><div class="ov-desc">Telefon, WhatsApp, E-Mail, Formular, Termin.</div><div class="ov-path">/kontakt.html</div></a>
+    <a href="impressum.html" class="ov-card"><div class="ov-num">08</div><div class="ov-title">Impressum</div><div class="ov-desc">Rechtliche Angaben nach § 5 TMG.</div><div class="ov-path">/impressum.html</div></a>
+    <a href="datenschutz.html" class="ov-card"><div class="ov-num">09</div><div class="ov-title">Datenschutz</div><div class="ov-desc">DSGVO-konforme Datenschutzerklärung.</div><div class="ov-path">/datenschutz.html</div></a>
+  </div>
+
+  <div style="margin-top:3rem;padding:1.5rem 1.75rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);font-size:0.9rem;color:var(--text-muted);line-height:1.7">
+    <strong style="color:var(--brown-dark)">Globale Komponenten:</strong> Sticky-CTA bottom-right · WhatsApp Floating Button · Cookie-Banner (localStorage) · Exit-Intent Popup · Micro-Fade-Animationen beim Scrollen · Mobile Hamburger-Menü · SEO-Meta-Tags & JSON-LD auf jeder Seite · Telefon-Click-to-Call · WhatsApp-Click-to-Chat.
+  </div>
+</div>
+</body>
+</html>

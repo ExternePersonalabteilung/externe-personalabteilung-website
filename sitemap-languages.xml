@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://externe-personalabteilung.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/uk/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/es/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
+  </url>
+</urlset>

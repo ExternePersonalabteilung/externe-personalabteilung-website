@@ -1,0 +1,210 @@
+# ==========================================================
+# ROBOTS.TXT
+# Externe Personalabteilung – Anita Bösche
+# https://www.externe-personalabteilung.de/
+# ==========================================================
+
+
+# ----------------------------------------------------------
+# Allgemeine Freigabe für alle seriösen Crawler
+# ----------------------------------------------------------
+
+User-agent: *
+Allow: /
+
+
+# ----------------------------------------------------------
+# OpenAI / ChatGPT
+# ----------------------------------------------------------
+
+# ChatGPT-Suche und Quellenangaben
+User-agent: OAI-SearchBot
+Allow: /
+
+# Abruf einer Seite auf Wunsch eines ChatGPT-Nutzers
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI-Modellentwicklung
+User-agent: GPTBot
+Allow: /
+
+# Prüfung von Landingpages für ChatGPT-Werbung
+User-agent: OAI-AdsBot
+Allow: /
+
+
+# ----------------------------------------------------------
+# Google und Gemini
+# ----------------------------------------------------------
+
+# Google-Suche
+User-agent: Googlebot
+Allow: /
+
+# Google-Bildersuche
+User-agent: Googlebot-Image
+Allow: /
+
+# Google-Videosuche
+User-agent: Googlebot-Video
+Allow: /
+
+# Google News
+User-agent: Googlebot-News
+Allow: /
+
+# Gemini und Google-KI-Nutzung
+User-agent: Google-Extended
+Allow: /
+
+# Weitere Google-Crawler
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Image
+Allow: /
+
+User-agent: GoogleOther-Video
+Allow: /
+
+
+# ----------------------------------------------------------
+# Microsoft Bing und Copilot
+# ----------------------------------------------------------
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+User-agent: AdIdxBot
+Allow: /
+
+
+# ----------------------------------------------------------
+# Anthropic / Claude
+# ----------------------------------------------------------
+
+# Claude-Suche
+User-agent: Claude-SearchBot
+Allow: /
+
+# Abruf auf Wunsch eines Claude-Nutzers
+User-agent: Claude-User
+Allow: /
+
+# Anthropic-Modellentwicklung
+User-agent: ClaudeBot
+Allow: /
+
+
+# ----------------------------------------------------------
+# Perplexity
+# ----------------------------------------------------------
+
+# Perplexity-Suche und Index
+User-agent: PerplexityBot
+Allow: /
+
+# Abruf durch einen Perplexity-Nutzer
+User-agent: Perplexity-User
+Allow: /
+
+
+# ----------------------------------------------------------
+# DuckDuckGo
+# ----------------------------------------------------------
+
+User-agent: DuckDuckBot
+Allow: /
+
+
+# ----------------------------------------------------------
+# Apple, Siri, Spotlight und Apple Intelligence
+# ----------------------------------------------------------
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+
+# ----------------------------------------------------------
+# Amazon und Alexa
+# ----------------------------------------------------------
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Amzn-SearchBot
+Allow: /
+
+User-agent: Amzn-User
+Allow: /
+
+
+# ----------------------------------------------------------
+# Brave Search und Brave AI
+# ----------------------------------------------------------
+
+User-agent: Bravebot
+Allow: /
+
+
+# ----------------------------------------------------------
+# Weitere internationale Suchmaschinen
+# ----------------------------------------------------------
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+
+# Naver
+User-agent: Yeti
+Allow: /
+
+# Seznam
+User-agent: SeznamBot
+Allow: /
+
+# Qwant
+User-agent: Qwantify
+Allow: /
+
+
+# ----------------------------------------------------------
+# Weitere KI- und Datencrawler
+# ----------------------------------------------------------
+
+# Common Crawl – Datengrundlage vieler Such- und KI-Systeme
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+
+
+# ----------------------------------------------------------
+# Sitemap
+# ----------------------------------------------------------
+
+Sitemap: https://www.externe-personalabteilung.de/sitemap.xml

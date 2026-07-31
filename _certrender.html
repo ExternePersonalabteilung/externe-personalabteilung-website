@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset="utf-8"><title>cert render</title>
+<style>
+  html,body{margin:0;padding:0;background:#fff}
+  canvas{display:none;width:100%;height:auto}
+  canvas.active{display:block}
+</style></head>
+<body>
+<script type="module">
+import * as pdfjsLib from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.worker.min.mjs';
+const files=[
+  {url:'assets/cert-traeger.pdf', out:'cert-traeger'},
+  {url:'assets/cert-bewerbungscoaching.pdf', out:'cert-bewerbungscoaching'},
+  {url:'assets/cert-jobcoaching.pdf', out:'cert-jobcoaching'},
+];
+window.__order=files.map(f=>f.out);
+window.__log=[];
+window.__info=()=>{const c=[...document.body.querySelectorAll('canvas')].find(x=>x.classList.contains('active'));const r=c.getBoundingClientRect();return {vw:window.innerWidth,vh:window.innerHeight,cssW:Math.round(r.width),cssH:Math.round(c.clientHeight),dpr:window.devicePixelRatio};};
+window.__show=(i)=>{[...document.body.querySelectorAll('canvas')].forEach((c,idx)=>c.classList.toggle('active',idx===i));window.scrollTo(0,0);};
+window.__scroll=(y)=>window.scrollTo(0,y);
+(async()=>{
+  try{
+    for(let i=0;i<files.length;i++){const f=files[i];
+      window.__log.push('load '+f.out);
+      const doc=await pdfjsLib.getDocument({url:f.url}).promise;
+      window.__log.push('gotdoc '+f.out);
+      const page=await doc.getPage(1);
+      window.__log.push('gotpage '+f.out);
+      const vp=page.getViewport({scale:1.0});
+      const canvas=document.createElement('canvas');
+      canvas.width=Math.round(vp.width);canvas.height=Math.round(vp.height);
+      const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
+      const rt=page.render({canvasContext:ctx,viewport:vp});
+      const r=await Promise.race([rt.promise.then(()=>'ok'),new Promise(z=>setTimeout(()=>z('TIMEOUT'),8000))]);
+      window.__log.push('render '+f.out+' '+r);
+      if(r!=='ok'){rt.cancel&&rt.cancel();continue;}
+      document.body.appendChild(canvas);
+      window.__log.push('done '+f.out+' '+canvas.width+'x'+canvas.height);
+    }
+    window.__show(0);window.__done=true;
+  }catch(e){window.__err=e.message;}
+})();
+</script>
+</body></html>
