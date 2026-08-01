@@ -1,0 +1,12 @@
+# Cloudflare Pages – dauerhafte 301-Weiterleitungen
+# Alte WordPress-URLs auf die aktuellen Seiten
+
+/anitabosche                                      /ueber-mich       301
+/jobcoaching-selbstanalyse                        /jobcoaching      301
+/professionelles-job-coaching-karriereplanung-4-0  /jobcoaching     301
+/professionelles-job-coaching-karriereplanung-4-0/ /jobcoaching     301
+/jobvermittlungavgsazav                           /jobvermittlung   301
+/jobvermittlungavgsazav/                          /jobvermittlung   301
+/kontakt-online-beratung                          /kontakt          301
+/kontakt-online-beratung/                         /kontakt          301
+/recruiting/                                      /recruiting       301
