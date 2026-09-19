@@ -8,6 +8,7 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
   </url>
   <url>
@@ -17,6 +18,7 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
   </url>
   <url>
@@ -26,6 +28,7 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
   </url>
   <url>
@@ -35,6 +38,7 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
   </url>
   <url>
@@ -44,6 +48,209 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/avgs.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/avgs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/avgs.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/en/avgs/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/avgs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/avgs.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/es/avgs/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/avgs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/avgs.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/ru/avgs/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/avgs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/avgs.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/uk/avgs/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/avgs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/avgs.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/ar/avgs/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/avgs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/avgs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/avgs.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/recruiting.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/recruiting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/recruiting.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/en/recruiting/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/recruiting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/recruiting.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/uk/recruiting/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/recruiting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/recruiting.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/es/recruiting/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/recruiting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/recruiting.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/ru/recruiting/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/recruiting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/recruiting.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/ar/recruiting/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/recruiting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/recruiting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/recruiting.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/kontakt.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/kontakt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/kontakt.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/en/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/kontakt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/kontakt.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/uk/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/kontakt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/kontakt.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/es/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/kontakt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/kontakt.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/ru/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/kontakt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/kontakt.html"/>
+  </url>
+  <url>
+    <loc>https://externe-personalabteilung.de/ar/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://externe-personalabteilung.de/kontakt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://externe-personalabteilung.de/en/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://externe-personalabteilung.de/uk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://externe-personalabteilung.de/es/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://externe-personalabteilung.de/ru/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://externe-personalabteilung.de/ar/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/kontakt.html"/>
   </url>
 </urlset>
