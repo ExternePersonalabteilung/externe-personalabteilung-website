@@ -14,8 +14,8 @@
 <link rel="alternate" hreflang="x-default" href="https://externe-personalabteilung.de/kontakt.html">
 <title>Kontakt | Externe Personalabteilung – Anita Bösche</title>
 <link rel="icon" href="assets/logo.png?v=2026042502">
-<link rel="stylesheet" href="assets/styles.css">
-<link rel="stylesheet" href="assets/kontakt.css">
+<link rel="stylesheet" href="assets/styles.css?v=20261007">
+<link rel="stylesheet" href="assets/kontakt.css?v=20261007">
 </head>
 <body>
 <nav class="site-nav"><div class="nav-inner">
@@ -74,7 +74,7 @@
           <address>Anita Bösche<br>Externe Personalabteilung<br>Falkenstraße 21a<br>82377 Penzberg</address>
         </div>
       </div>
-      <form id="kontaktForm" class="kt-form fade-up fade-up-1" data-endpoint="/kontakt-senden" data-lang="de">
+      <form id="kontaktForm" class="kt-form fade-up fade-up-1" data-endpoint="kontakt-senden.php" data-lang="de">
         <span class="kt-pill">Antwort in der Regel binnen 24 Stunden</span>
         <h2>Schreiben Sie mir –<br><span class="accent">ich melde mich persönlich</span></h2>
         <p class="kt-form-sub">Ein paar Zeilen genügen. Je mehr ich über Ihr Anliegen weiß, desto konkreter kann ich antworten.</p>
@@ -83,7 +83,7 @@
         <label class="kt-label">Telefon (optional)<input type="tel" name="telefon" autocomplete="tel"></label>
         <label class="kt-label">Anliegen<select name="anliegen"><option>Jobcoaching / AVGS</option><option>Recruiting / Mitarbeitersuche</option><option>Jobvermittlung</option><option>Kooperation / Freelancer</option><option>Sonstiges</option></select></label>
         <label class="kt-label">Nachricht<textarea required rows="5" name="nachricht"></textarea></label>
-        <label class="kt-consent"><input required type="checkbox" name="datenschutz"> Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden.</label>
+        <label class="kt-consent"><input required type="checkbox" name="datenschutz"><span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden.</span></label>
         <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <button type="submit" class="kt-send" data-label="Nachricht senden" data-sending="Wird gesendet …">Nachricht senden</button>
         <span class="kt-secure"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg>Ihre Angaben werden vertraulich behandelt.</span>
@@ -124,6 +124,6 @@
 </div>
 
 
-<script src="assets/app.js" defer></script>
-<script src="assets/kontakt.js" defer></script>
+<script src="assets/app.js?v=20261007" defer></script>
+<script src="assets/kontakt.js?v=20261007" defer></script>
 </body></html>

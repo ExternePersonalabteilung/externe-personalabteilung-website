@@ -143,7 +143,8 @@ h3,.h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;col
 .cta-tip::after{content:'';position:absolute;left:100%;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#1a1a1a}
 .cta-btn:hover .cta-tip{opacity:1;transform:translateY(-50%) translateX(-2px)}
 @media(prefers-reduced-motion:reduce){.cta-gold,.cta-wa,.cta-aa{animation:none}}
-@media(max-width:680px){.cta-tip{display:none}.cta-stack{bottom:5rem;right:1rem;gap:0.6rem}.cta-btn{width:52px;height:52px}.cta-wa svg{width:28px;height:28px}.cta-num{display:block;right:calc(100% + 10px);white-space:normal;width:min(62vw,230px);font-size:0.74rem}}
+@media(max-width:680px){.cta-tip{display:none}.cta-stack{bottom:5rem;right:0.6rem;gap:0.5rem}.cta-btn{width:44px;height:44px}.cta-wa svg{width:24px;height:24px}.cta-num{display:block;right:calc(100% + 10px);white-space:normal;width:min(62vw,230px);font-size:0.74rem}}
+@media(max-width:600px){.ab-section{padding-left:0!important;padding-right:0!important}.ab-hero{padding-left:16px!important;padding-right:16px!important}[dir="rtl"] .ab-content{padding-inline-start:0!important}.ab-section h1{overflow-wrap:break-word;hyphens:auto}}
 /* RTL: Freiraum fuer die fixierte CTA-Leiste, die auf der Inline-Start-Seite liegt */
 @media(min-width:681px) and (max-width:1400px){[dir="rtl"] .ab-content{padding-inline-start:88px}}
 /* --- ARBEITSAGENTUR-KUNDENNUMMER --- */
