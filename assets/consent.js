@@ -38,6 +38,47 @@
   'use strict';
 
   var STORAGE_KEY = 'epa_consent_v3';
+  /* Einwilligungsversion: bei neuen Diensten erhöhen → Banner erscheint erneut */
+  var CONSENT_VERSION = '2026-10-openai-ads';
+
+  /* --- OpenAI Ads Measurement Pixel (Kategorie Marketing) ----------------
+     Pixel-ID aus dem OpenAI Ads Manager (Tab „Conversions“) hier eintragen.
+     Solange leer, wird nichts geladen. Automatischer erweiterter Abgleich:
+     im Ads Manager deaktiviert lassen; es werden keine user-Daten übergeben. */
+  var OAI_PIXEL_ID = 'GXEaqFWMDPfZWhSrK7wsoG';
+  var OAI_DEBUG = true; // TESTPHASE – vor Veröffentlichung auf false setzen!
+  var oaiLoaded = false;
+  function oaiStart() {
+    if (!OAI_PIXEL_ID) return;
+    if (oaiLoaded) { window.oaiq('consent', true); return; }
+    oaiLoaded = true;
+    (function (w, d, s, u) {
+      if (w.oaiq) return;
+      var q = function () { q.q.push(arguments); };
+      q.q = []; w.oaiq = q;
+      var js = d.createElement(s); js.async = true; js.src = u;
+      var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(js, f);
+    })(window, document, 'script', 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
+    window.oaiq('consent', true);
+    var cfg = { pixelId: OAI_PIXEL_ID }; if (OAI_DEBUG) cfg.debug = true;
+    window.oaiq('init', cfg);
+  }
+  function oaiStop() {
+    if (oaiLoaded && typeof window.oaiq === 'function') { try { window.oaiq('consent', false); } catch (e) {} }
+    ['__oppref', '__obref'].forEach(function (n) {
+      var h = location.hostname, parts = h.split('.'), doms = ['', h];
+      for (var i = 1; i < parts.length - 1; i++) doms.push('.' + parts.slice(i).join('.'));
+      doms.forEach(function (dm) { document.cookie = n + '=; Max-Age=0; path=/' + (dm ? '; domain=' + dm : ''); });
+    });
+  }
+  /* Conversion nur bei Marketing-Einwilligung und geladenem Pixel */
+  window.EPATrack = {
+    lead: function () {
+      if (!oaiLoaded || !currentPrefs().marketing || typeof window.oaiq !== 'function') return false;
+      window.oaiq('measure', 'lead_created', { type: 'customer_action' });
+      return true;
+    }
+  };
   var LEGACY_KEYS = ['epa_cookie_ack_v1'];
 
   /* --- Kategorien -------------------------------------------------------- */
@@ -63,7 +104,7 @@
       cats: {
         necessary: { name: 'Notwendig', desc: 'Für den technischen Betrieb der Website und die Speicherung Ihrer Cookie-Entscheidung erforderlich. Diese Cookies können nicht deaktiviert werden.' },
         statistics: { name: 'Statistik', desc: 'Anonymisierte Reichweitenmessung, damit wir die Website verbessern können (z. B. Google Analytics). Wird nur mit Ihrer Einwilligung geladen.' },
-        marketing: { name: 'Marketing', desc: 'Eingebettete Inhalte und Reichweiten-/Werbedienste (z. B. YouTube, Google Maps, Facebook Pixel). Wird nur mit Ihrer Einwilligung geladen.' }
+        marketing: { name: 'Marketing', desc: 'Eingebettete Inhalte und Reichweiten-/Werbedienste (z. B. YouTube, Google Maps, OpenAI Ads). Wird nur mit Ihrer Einwilligung geladen.' }
       },
       embedTitle: 'Externer Inhalt blockiert',
       embedBody: 'Dieser Inhalt wird von einem externen Anbieter geladen. Erst mit Ihrer Zustimmung werden dabei ggf. Daten an Dritte übertragen.',
@@ -86,7 +127,7 @@
       cats: {
         necessary: { name: 'Necessary', desc: 'Required for the technical operation of the site and to store your cookie choice. These cannot be disabled.' },
         statistics: { name: 'Statistics', desc: 'Anonymised analytics so we can improve the site (e.g. Google Analytics). Loaded only with your consent.' },
-        marketing: { name: 'Marketing', desc: 'Embedded content and advertising services (e.g. YouTube, Google Maps, Facebook Pixel). Loaded only with your consent.' }
+        marketing: { name: 'Marketing', desc: 'Embedded content and advertising services (e.g. YouTube, Google Maps, OpenAI Ads). Loaded only with your consent.' }
       },
       embedTitle: 'External content blocked',
       embedBody: 'This content is loaded from an external provider. Data may be transferred to third parties once you agree.',
@@ -109,7 +150,7 @@
       cats: {
         necessary: { name: 'Necesarias', desc: 'Necesarias para el funcionamiento técnico del sitio y para guardar su decisión sobre las cookies. No se pueden desactivar.' },
         statistics: { name: 'Estadística', desc: 'Analítica anonimizada para mejorar el sitio (p. ej. Google Analytics). Se carga solo con su consentimiento.' },
-        marketing: { name: 'Marketing', desc: 'Contenido incrustado y servicios publicitarios (p. ej. YouTube, Google Maps, Facebook Pixel). Se carga solo con su consentimiento.' }
+        marketing: { name: 'Marketing', desc: 'Contenido incrustado y servicios publicitarios (p. ej. YouTube, Google Maps, OpenAI Ads). Se carga solo con su consentimiento.' }
       },
       embedTitle: 'Contenido externo bloqueado',
       embedBody: 'Este contenido se carga desde un proveedor externo. Al aceptar, es posible que se transfieran datos a terceros.',
@@ -132,7 +173,7 @@
       cats: {
         necessary: { name: 'Необхідні', desc: 'Потрібні для технічної роботи сайту та збереження вашого рішення щодо cookie. Їх не можна вимкнути.' },
         statistics: { name: 'Статистика', desc: 'Анонімна аналітика, щоб покращувати сайт (напр. Google Analytics). Завантажується лише за вашою згодою.' },
-        marketing: { name: 'Маркетинг', desc: 'Вбудований контент і рекламні сервіси (напр. YouTube, Google Maps, Facebook Pixel). Завантажується лише за вашою згодою.' }
+        marketing: { name: 'Маркетинг', desc: 'Вбудований контент і рекламні сервіси (напр. YouTube, Google Maps, OpenAI Ads). Завантажується лише за вашою згодою.' }
       },
       embedTitle: 'Зовнішній контент заблоковано',
       embedBody: 'Цей контент завантажується із зовнішнього джерела. Після згоди дані можуть передаватися третім сторонам.',
@@ -155,7 +196,7 @@
       cats: {
         necessary: { name: 'Необходимые', desc: 'Требуются для технической работы сайта и сохранения вашего решения о cookie. Их нельзя отключить.' },
         statistics: { name: 'Статистика', desc: 'Анонимная аналитика, чтобы улучшать сайт (напр. Google Analytics). Загружается только с вашего согласия.' },
-        marketing: { name: 'Маркетинг', desc: 'Встроенный контент и рекламные сервисы (напр. YouTube, Google Maps, Facebook Pixel). Загружается только с вашего согласия.' }
+        marketing: { name: 'Маркетинг', desc: 'Встроенный контент и рекламные сервисы (напр. YouTube, Google Maps, OpenAI Ads). Загружается только с вашего согласия.' }
       },
       embedTitle: 'Внешний контент заблокирован',
       embedBody: 'Этот контент загружается из внешнего источника. После согласия данные могут передаваться третьим лицам.',
@@ -178,7 +219,7 @@
       cats: {
         necessary: { name: 'ضرورية', desc: 'لازمة للتشغيل التقني للموقع ولحفظ قرارك بشأن ملفات تعريف الارتباط. لا يمكن تعطيلها.' },
         statistics: { name: 'إحصاءات', desc: 'تحليلات مجهولة الهوية لتحسين الموقع (مثل Google Analytics). تُحمّل فقط بموافقتك.' },
-        marketing: { name: 'تسويق', desc: 'محتوى مضمّن وخدمات إعلانية (مثل YouTube وGoogle Maps وFacebook Pixel). تُحمّل فقط بموافقتك.' }
+        marketing: { name: 'تسويق', desc: 'محتوى مضمّن وخدمات إعلانية (مثل YouTube وGoogle Maps وOpenAI Ads). تُحمّل فقط بموافقتك.' }
       },
       embedTitle: 'تم حظر محتوى خارجي',
       embedBody: 'يتم تحميل هذا المحتوى من مزوّد خارجي. قد يتم نقل بيانات إلى أطراف ثالثة بعد موافقتك.',
@@ -201,13 +242,14 @@
       var raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
       var obj = JSON.parse(raw);
-      if (!obj || obj.v !== 3 || !obj.categories) return null;
+      if (!obj || obj.v !== 3 || !obj.categories || obj.cv !== CONSENT_VERSION) return null;
       return obj;
     } catch (e) { return null; }
   }
   function writeStore(prefs) {
     var obj = {
       v: 3,
+      cv: CONSENT_VERSION,
       date: new Date().toISOString(),
       categories: {
         necessary: true,
@@ -284,6 +326,7 @@
   }
 
   function apply(prefs) {
+    if (prefs.marketing) oaiStart(); else oaiStop();
     activateScripts(prefs);
     refreshEmbeds(prefs);
     // gtag Consent Mode (falls vorhanden) aktualisieren

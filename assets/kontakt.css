@@ -36,6 +36,7 @@
 .kt-label textarea{resize:vertical;min-height:120px}
 .kt-label input:focus,.kt-label select:focus,.kt-label textarea:focus{outline:none;border-color:rgba(184,132,31,.85);box-shadow:0 0 0 3px rgba(233,189,79,.28)}
 .kt-consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.84rem;line-height:1.5;color:#6b4a1e}
+.kt-consent span{flex:1 1 auto;min-width:0}
 .kt-consent input{margin-top:.2rem;accent-color:#b8841f;width:1.05rem;height:1.05rem;flex:0 0 auto}
 .kt-consent a{color:#9a6b16;text-decoration:underline}
 .kt-consent a:hover{color:#b8841f}

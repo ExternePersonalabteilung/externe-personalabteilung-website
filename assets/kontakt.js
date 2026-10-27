@@ -40,7 +40,7 @@
     fetch(endpoint,{method:'POST',body:d})
       .then(function(r){return r.json().catch(function(){throw new Error('kein JSON');}).then(function(j){
         if(!r.ok||!j.ok)throw new Error(j.fehler||'Fehler');return j;});})
-      .then(function(){zeige(msg.getAttribute('data-ok')||'',' #2a9e50'.trim());f.reset();})
+      .then(function(){zeige(msg.getAttribute('data-ok')||'',' #2a9e50'.trim());f.reset();try{if(window.EPATrack)window.EPATrack.lead();}catch(e){}})
       .catch(function(){zeige(msg.getAttribute('data-fallback')||'','#a35a12');mailtoErsatz(d);})
       .then(function(){if(btn){btn.disabled=false;btn.textContent=label;}});
   });
