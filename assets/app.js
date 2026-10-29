@@ -271,3 +271,21 @@
 
 })();
 
+
+(function(){var html=document.documentElement;function fit(){var inner=document.querySelector('.site-nav .nav-inner'),links=document.querySelector('.nav2');if(!inner||!links)return;html.classList.remove('nav-compact','nav-tight');if(window.innerWidth<1000)return;var over=function(){return inner.scrollWidth>inner.clientWidth+1};if(over()){html.classList.add('nav-tight');if(over())html.classList.add('nav-compact')}}
+window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener('DOMContentLoaded',fit);fit();})();
+
+(function(){function norm(u){try{var p=new URL(u,location.href).pathname;return p.replace(/index\.html$/,'').replace(/\/$/,'')}catch(e){return ''}}
+function mark(){var here=norm(location.href);document.querySelectorAll('.nav2-seg>a,.nav2-util>a:not(.nav-cta)').forEach(function(a){if(norm(a.href)===here)a.classList.add('is-current')});
+document.querySelectorAll('.nav2-seg>.nav-drop').forEach(function(d){var hit=[].some.call(d.querySelectorAll('a'),function(a){return norm(a.href)===here});if(hit){d.querySelector('.nav-drop-toggle').classList.add('is-current');d.querySelectorAll('.nav-drop-menu a').forEach(function(a){if(norm(a.href)===here)a.classList.add('is-current')})}});
+document.querySelectorAll('.mobile-menu a:not(.nav-cta):not(.lang-opt)').forEach(function(a){if(norm(a.href)===here)a.classList.add('is-current')})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mark);else mark();})();
+
+(function(){function build(){var m=document.querySelector('.mobile-menu');if(!m||m.querySelector('.mob-sec'))return;var te=document.querySelector('.nav2-tab-emp'),tj=document.querySelector('.nav2-tab-job');if(!te||!tj)return;
+function sec(cls,tab){var s=document.createElement('div');s.className='mob-sec '+cls;var h=document.createElement('div');h.className='mob-sec-h';var ic=tab.querySelector('svg');if(ic)h.appendChild(ic.cloneNode(true));var sp=document.createElement('span');sp.textContent=tab.textContent.trim();h.appendChild(sp);s.appendChild(h);return s}
+var se=sec('mob-sec-emp',te),sj=sec('mob-sec-job',tj),su=document.createElement('div');su.className='mob-util';
+var EMP=/(recruiting|foerderung|unternehmen-tipps|zfa-finden|steuerfachangestellte|baecker)/,JOB=/(jobcoaching|jobvermittlung|avgs|personal-branding|stellen-finden|beruf-wechseln)/;
+var kids=[].slice.call(m.children),cta=null,lp=null;
+kids.forEach(function(k){if(k.classList.contains('lang-pick')){lp=k;return}if(k.classList.contains('nav-cta')){cta=k;return}var a=k.matches('a')?k:k.querySelector('a');if(!a){su.appendChild(k);return}var h=a.getAttribute('href')||'';if(EMP.test(h))se.appendChild(k);else if(JOB.test(h))sj.appendChild(k);else su.appendChild(k)});
+m.innerHTML='';if(lp)m.appendChild(lp);m.appendChild(se);m.appendChild(sj);m.appendChild(su);if(cta)m.appendChild(cta)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build);else build();})();
